@@ -89,7 +89,22 @@ Test this function by hand in the console to get it working, and when you think 
 // var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-
+  var returnSum = 0;
+  var returnString = '';
+  for (var i = 0; i < sumArr.length; i++) {
+    var currElement = sumArr[i];
+    returnSum = sum(returnSum, currElement)[0];
+    if (i == sumArr.length - 1) //if the last element in the array
+    {
+      returnString = returnString + currElement;
+    }
+    else //for all other elements
+    {
+      returnString = returnString + currElement + ',';
+    }
+  }
+  returnString = returnString + ' was passed in as an array of numbers, and ' + returnSum + ' is their sum.';
+  return new Array(returnSum, returnString);
 }
 
 // Here is the test for sumArray(); uncomment it to run it
