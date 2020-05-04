@@ -61,9 +61,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-
+  var returnSum = sum(sum(a, b)[0], c)[0];
+  var returnProduct = multiply(multiply(a, b)[0], c)[0];
+  return new Array (
+    returnSum,
+    returnProduct,
+    a + ' and ' + b + ' and ' + c + ' sum to ' + returnSum + '.',
+    'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + returnProduct + '.'
+    );
 }
-
 // Here is the test for sumAndMultiply(); uncomment it to run it
 // testSumAndMultiply(4,7,5);
 
