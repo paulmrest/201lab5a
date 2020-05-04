@@ -168,7 +168,22 @@ Test this function by hand in the console to get it working, and when you think 
 var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-
+  var returnProduct = 1;
+  var returnString = 'The numbers ';
+  for (var i = 0; i < dynamicArray.length; i++) {
+    var currElement = dynamicArray[i];
+    returnProduct = multiply(returnProduct, currElement)[0];
+    if (i == dynamicArray.length - 1) //if the last element in the array
+    {
+      returnString = returnString + currElement;
+    }
+    else //for all other elements
+    {
+      returnString = returnString + currElement + ',';
+    }
+  }
+  returnString = returnString + ' have a product of ' + returnProduct + '.';
+  return new Array(returnProduct, returnString);
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
