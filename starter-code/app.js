@@ -63,11 +63,6 @@ Test this function by hand in the console to get it working, and when you think 
 function sumAndMultiply(a, b, c) { //eslint-disable-line
   var returnSum = sum(sum(a, b)[0], c)[0];
   var returnProduct = multiply(multiply(a, b)[0], c)[0];
-
-  //START-CONSOLE-TESTING
-  // console.log('returnSum: ' + returnSum);
-  // console.log('returnProduct: ' + returnProduct);
-  //END-CONSOLE-TESTING
   return new Array (
     returnSum,
     returnProduct,
